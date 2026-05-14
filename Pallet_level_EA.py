@@ -165,7 +165,7 @@ def make_children(
 ) -> List[List[int]]:
     children: List[List[int]] = []
     while len(children) < num_children:
-        p1, p2 = random.sample(parents, 5)
+        p1, p2 = random.sample(parents, 2)
         child = crossover_count_preserving(
             p1,
             p2,
@@ -368,5 +368,5 @@ def run_ga(
         crossover_std_ratio=crossover_std_ratio,
     )
 
-    placements, failed_item_ids, failed_type_ids = decode_result(best_order)  # 直接调用
+    placements, failed_item_ids, failed_type_ids = decode_result(best_order)  
     return best_order, failed_type_ids, best_fit, placements
